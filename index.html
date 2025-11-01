@@ -4,12 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Privacy Policy & Terms - Tej Resume App</title>
-  <script src="https://cdn.tailwindcss.com"></script>   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; background:#f1f5f9; }
-    .tab-button.active { border-bottom:3px solid #3b82f6; color:#3b82f6; background:#eef2ff; }
+    /* TAB ACTIVE FIX: यह सुनिश्चित करता है कि सक्रिय टैब साफ दिखे */
+    .tab-button.active { 
+      border-bottom:3px solid #3b82f6; 
+      color:#3b82f6; 
+      background:#eef2ff; 
+      font-weight: 700; /* Bold */
+    }
     .notice { background: linear-gradient(90deg,#fef3c7,#fff7ed); border-left:4px solid #f59e0b; padding:12px; border-radius:8px; }
-    /* अगर आपकी पुरानी कस्टम CSS थी, तो उसे यहाँ या एक अलग लिंक में जोड़ें */
+    /* सुनिश्चित करें कि कंटेनर PC पर सेंटर में रहे और ज़्यादा बड़ा न हो */
+    .container {
+      max-width: 1024px; /* उदाहरण के लिए, 1024px पर सीमित */
+      margin-left: auto;
+      margin-right: auto;
+    }
   </style>
 </head>
 <body class="min-h-screen">
@@ -51,7 +63,6 @@
             <li>First extracts any email addresses and phone numbers and <strong>removes/masks them locally</strong>.</li>
             <li>Then, the app may send the remaining content (education, job titles, descriptions, skills, dates, and any other text present) to a third‑party AI/ML service to convert it into structured resume fields — <strong>only if you agreed</strong> to this in the consent dialog.</li>
             <li>Any other sensitive identifiers (for example: national ID, passport number, bank details, full home address) that exist in your file <strong>may also be sent</strong> if they were not explicitly recognized and removed by the app. For safety, please remove or mask such sensitive items before uploading.</li>
-            
           </ul>
 
           <h2 class="text-lg font-bold mt-4">3. Why we remove email & phone</h2>
@@ -140,6 +151,7 @@
 
   <script>
     function showTab(name) {
+      // टैब बदलने पर active क्लास को सही तरीके से हटाता और जोड़ता है
       document.querySelectorAll('.tab-content').forEach(e => e.classList.add('hidden'));
       document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
       document.getElementById('content-' + name).classList.remove('hidden');
