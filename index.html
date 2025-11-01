@@ -1,233 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Privacy Policy & Terms - Tej Resume App</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        /* BASE STYLES */
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background: #f0f4f8; /* हल्का नीला-ग्रे बैकग्राउंड */
-            min-height: 100vh; 
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 1024px;
-            margin: 2.5rem auto; /* ऊपर-नीचे थोड़ी ज्यादा जगह */
-            padding: 1rem;
-        }
-        .bg-white { background-color: #ffffff; }
-        .rounded-2xl { border-radius: 1.5rem; } /* कोने और गोल किए */
-        .shadow-lg { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); } /* गहरी छाया */
-        .overflow-hidden { overflow: hidden; }
-        .border-b { border-bottom: 1px solid #e2e8f0; }
-        .flex { display: flex; }
-        .flex-1 { flex: 1 1 0%; }
-        .p-4 { padding: 1rem; }
-        .text-left { text-align: left; }
-        .font-semibold { font-weight: 600; }
-        .p-8 { padding: 2rem; }
-        
-        /* Typography Improvements */
-        .text-3xl { font-size: 1.875rem; line-height: 2.25rem; } /* मुख्य शीर्षक बड़ा किया */
-        .font-extrabold { font-weight: 800; }
-        .mb-2 { margin-bottom: 0.5rem; }
-        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
-        .text-gray-500 { color: #94a3b8; } /* हल्का ग्रे */
-        .mb-6 { margin-bottom: 1.5rem; }
-        .mt-2 { margin-top: 0.5rem; }
-        .ml-6 { margin-left: 1.5rem; }
-        .list-disc { list-style-type: disc; }
-        .text-xl { font-size: 1.25rem; line-height: 1.75rem; } /* उप-शीर्षक (H2) थोड़े बड़े किए */
-        .font-bold { font-weight: 700; }
-        .mt-4 { margin-top: 1rem; }
-        .text-gray-800 { color: #1e293b; } /* मुख्य टेक्स्ट को गहरा ग्रे */
-        .leading-relaxed { line-height: 1.75; } /* लाइन की ऊंचाई बढ़ाई */
-        .text-blue-600 { color: #2563eb; }
-        .font-medium { font-weight: 500; }
-        .mb-4 { margin-bottom: 1rem; }
-        .mt-6 { margin-top: 1.5rem; }
-        .space-y-4 > * + * { margin-top: 1rem; }
-        .w-full { width: 100%; }
-        
-        /* FORM/INPUT STYLES - बेहतर इनपुट डिजाइन */
-        .input-field {
-            padding: 0.8rem 1rem;
-            border: 2px solid #cbd5e1; /* हल्का बॉर्डर */
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-            outline: none;
-        }
-        .input-field:focus {
-            border-color: #3b82f6; /* फोकस पर नीला बॉर्डर */
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
-        }
-        .submit-button {
-            padding: 0.75rem 1.5rem;
-            background-color: #3b82f6; /* गहरा नीला */
-            color: #ffffff;
-            border: none;
-            border-radius: 0.5rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.1s ease;
-        }
-        .submit-button:hover { background-color: #2563eb; }
-        .submit-button:active { transform: scale(0.98); }
-
-
-        /* TAB SPECIFIC STYLES - सक्रिय टैब को प्रमुख बनाना */
-        .tab-button {
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s ease-in-out;
-            color: #64748b; /* निष्क्रिय टेक्स्ट रंग */
-            background-color: transparent;
-            cursor: pointer;
-            text-align: center; /* केंद्र में टेक्स्ट */
-            padding: 1rem 0; /* ऊपर-नीचे की पैडिंग बढ़ाई */
-        }
-        .tab-button:hover:not(.active) {
-            background-color: #f8fafc;
-            color: #334155;
-        }
-        .tab-button.active { 
-            border-bottom: 3px solid #3b82f6; 
-            color: #3b82f6; 
-            background-color: #eff6ff; /* सक्रिय टैब के लिए हल्का नीला बैकग्राउंड */
-        }
-        .tab-content.hidden { display: none; }
-
-        /* NOTICE STYLES - चेतावनी बॉक्स को आकर्षक बनाना */
-        .notice { 
-            background: linear-gradient(135deg, #fef3c7, #fff7ed); 
-            border-left: 5px solid #f59e0b; 
-            padding: 1.5rem; /* पैडिंग बढ़ाई */
-            border-radius: 0.75rem; /* कोने गोल किए */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        /* RESPONSIVE IMPROVEMENT */
-        @media (max-width: 768px) {
-            .flex { flex-direction: column; }
-            .tab-button { border-bottom: none; border-top: 1px solid #e5e7eb; }
-            .container { margin: 1rem auto; padding: 0.5rem; }
-            .rounded-2xl { border-radius: 1rem; }
-        }
-        @media (min-width: 769px) {
-            .tab-button {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Privacy Policy & Terms - Tej Resume App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background:#f1f5f9; }
+    .tab-button.active { border-bottom:3px solid #3b82f6; color:#3b82f6; background:#eef2ff; }
+    .notice { background: linear-gradient(90deg,#fef3c7,#fff7ed); border-left:4px solid #f59e0b; padding:12px; border-radius:8px; }
+  </style>
 </head>
 <body class="min-h-screen">
 
-    <div class="container mx-auto max-w-4xl">
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-            
-            <div class="border-b">
-                <div class="flex">
-                    <button id="tab-privacy" onclick="showTab('privacy')" class="tab-button active flex-1 font-semibold">Privacy Policy</button>
-                    <button id="tab-terms" onclick="showTab('terms')" class="tab-button flex-1 font-semibold">Terms & Conditions</button>
-                    <button id="tab-contact" onclick="showTab('contact')" class="tab-button flex-1 font-semibold">Contact Us</button>
-                </div>
-            </div>
-
-            <div class="p-8">
-                
-                <div id="content-privacy" class="tab-content">
-                    <h1 class="text-3xl font-extrabold mb-2 text-gray-800">Privacy Policy 🛡️</h1>
-                    <p class="text-sm text-gray-500 mb-6">Effective Date: October 26, 2025</p>
-
-                    <div class="notice mb-6">
-                        <p class="font-bold text-gray-800">Quick summary (संक्षेप में):</p>
-                        <ul class="mt-2 list-disc ml-6 text-sm text-gray-700 leading-normal">
-                            <li>अपलोड की गई फ़ाइलों से **ईमेल और फ़ोन नंबर** को AI या सर्वर पर **कभी नहीं** भेजा जाता।</li>
-                            <li>अन्य रिज्यूमे सामग्री (शिक्षा, अनुभव, कौशल) **आपकी सहमति** से थर्ड-पार्टी AI सेवा को भेजी जा सकती है।</li>
-                            <li>यदि आपकी फ़ाइल में अन्य संवेदनशील पहचानकर्ता (ID, बैंक विवरण) हैं, तो भेजने से पहले उन्हें **हटा दें या मास्क करें**।</li>
-                        </ul>
-                    </div>
-
-                    <h2 class="text-xl font-bold mt-6 text-gray-800">1. हम क्या स्टोर करते हैं</h2>
-                    <p class="text-gray-800 mt-2 leading-relaxed">
-                        आप द्वारा ऐप में दर्ज किया गया सभी मुख्य रिज्यूमे डेटा (**काम का इतिहास, शिक्षा, कौशल, सारांश**) **केवल आपके डिवाइस पर स्थानीय रूप से** संग्रहीत होता है। हम आपके ईमेल या फोन नंबर को अपने सर्वर पर जमा नहीं करते हैं।
-                    </p>
-                    
-                    <h2 class="text-xl font-bold mt-6 text-gray-800">2. जब आप कोई फ़ाइल अपलोड करते हैं</h2>
-                    <h2 class="text-xl font-bold mt-6 text-gray-800">3. हम ईमेल और फ़ोन क्यों हटाते हैं</h2>
-                    <h2 class="text-xl font-bold mt-6 text-gray-800">4. AI की सटीकता और स्टोरेज</h2>
-                    <h2 class="text-xl font-bold mt-6 text-gray-800">5. आपका नियंत्रण और सहमति</h2>
-                    <h2 class="text-xl font-bold mt-6 text-gray-800">6. सुरक्षा</h2>
-                    <h2 class="text-xl font-bold mt-6 text-gray-800" id="data-deletion">7. डेटा हटाने का अनुरोध (Data Deletion Request)</h2>
-                    <p class="text-gray-800 mt-2 leading-relaxed">
-                        चूंकि आपका डेटा आपके डिवाइस पर स्थानीय रूप से संग्रहीत है, इसलिए इसे हटाना बहुत सरल है:
-                    </p>
-                    <ul class="list-disc ml-6 mt-2 text-gray-800 leading-relaxed">
-                        <li>**स्थानीय डेटा:** अपने फोन पर संग्रहीत डेटा को हटाने के लिए, बस ऐप खोलें और **'Delete Profile'** बटन का उपयोग करें, या एप्लिकेशन को **अनइंस्टॉल** करें।</li>
-                        <li>**थर्ड-पार्टी डेटा:** AI पार्सिंग सेवा को अस्थायी रूप से भेजा गया कोई भी डेटा **अस्थायी (ephemerally)** रूप से संसाधित होता है और उपयोग के तुरंत बाद हटा दिया जाता है।</li>
-                        <li>**औपचारिक अनुरोध:** किसी भी औपचारिक पुष्टि के लिए, आप हमसे <a href="#" onclick="showTab('contact'); return false;" class="text-blue-600 font-bold hover:underline">Contact Us</a> टैब के माध्यम से संपर्क कर सकते हैं।</li>
-                    </ul>
-
-                </div>
-
-                <div id="content-terms" class="tab-content hidden">
-                    <h1 class="text-3xl font-extrabold mb-2 text-gray-800">Terms & Conditions 📜</h1>
-                    <p class="text-sm text-gray-500 mb-6">Effective Date: October 26, 2025</p>
-
-                    <h2 class="text-xl font-bold mt-6 text-gray-800">1. स्वीकृति</h2>
-                    <p class="text-gray-800 mt-2 leading-relaxed">
-                        Tej Resume App का उपयोग करके आप इन शर्तों को स्वीकार करते हैं।
-                    </p>
-                    
-                    <h2 class="text-xl font-bold mt-6 text-gray-800">3. उपयोगकर्ता की जिम्मेदारी</h2>
-                    <p class="text-gray-800 mt-2 leading-relaxed">
-                        आप अपनी अपलोड या दर्ज की गई सामग्री के लिए जिम्मेदार हैं।
-                    </p>
-                    <h2 class="text-xl font-bold mt-6 text-gray-800">5. बौद्धिक संपदा</h2>
-                    <p class="text-gray-800 mt-2 leading-relaxed">
-                        ऐप का कोड और डिज़ाइन हमारी संपत्ति है। हालांकि, आप द्वारा दर्ज किया गया **रिज्यूमे कंटेंट आपका ही रहेगा (The user's property)**।
-                    </p>
-                </div>
-
-                <div id="content-contact" class="tab-content hidden">
-                    <h1 class="text-3xl font-extrabold mb-2 text-gray-800">Contact Us 📧</h1>
-                    <p class="text-gray-800 mt-2 leading-relaxed mb-4">यदि आपके पास इस नीति या डेटा के संबंध में कोई प्रश्न है, तो हमसे संपर्क करें:</p>
-                    
-                    <p class="text-xl font-bold text-blue-600 mb-6">
-                        <a href="mailto:tejresume.help@gmail.com" class="hover:underline">tejresume.help@gmail.com</a>
-                    </p>
-
-                    <div class="mt-6">
-                        <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" class="space-y-4">
-                            <input name="name" required placeholder="Your name" class="w-full input-field" />
-                            <input name="_replyto" type="email" required placeholder="Your email" class="w-full input-field" />
-                            <textarea name="message" rows="5" required placeholder="Message" class="w-full input-field"></textarea>
-                            <button class="submit-button font-semibold">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+  <div class="container mx-auto p-6 max-w-4xl">
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+      <div class="border-b">
+        <div class="flex">
+          <button id="tab-privacy" onclick="showTab('privacy')" class="tab-button active flex-1 p-4 text-left font-semibold">Privacy Policy</button>
+          <button id="tab-terms" onclick="showTab('terms')" class="tab-button flex-1 p-4 text-left font-semibold">Terms & Conditions</button>
+          <button id="tab-contact" onclick="showTab('contact')" class="tab-button flex-1 p-4 text-left font-semibold">Contact Us</button>
         </div>
+      </div>
+
+      <div class="p-8">
+        <div id="content-privacy" class="tab-content">
+          <h1 class="text-2xl font-extrabold mb-2">Privacy Policy</h1>
+          <p class="text-sm text-gray-500 mb-6">Effective Date: October 26, 2025</p>
+
+          <div class="notice mb-6">
+            <strong>Quick summary:</strong>
+            <ul class="mt-2 list-disc ml-6 text-sm">
+              <li>Email and phone number from uploaded files are <strong>never</strong> sent to AI or any server — they are removed locally first.</li>
+              <li>Other resume content (education, experience, skills, and any other fields present in the file) <strong>may be</strong> sent to a third‑party AI service for processing — only with your explicit consent.</li>
+              <li>If your file contains other sensitive identifiers (national ID, passport, bank details, full address, etc.), remove or mask them before uploading if you do not want them processed.</li>
+            </ul>
+          </div>
+
+          <h2 class="text-lg font-bold mt-4">1. What we store</h2>
+          <p class="text-gray-700 mt-2 leading-relaxed">
+            All core resume data you enter in the app (work history, education, skills, projects, summary) is stored locally on your device only. We do not collect or store your email address or phone number on our servers.
+          </p>
+
+          <h2 class="text-lg font-bold mt-4">2. What happens when you upload a file</h2>
+          <p class="text-gray-700 mt-2 leading-relaxed">
+            When you upload a PDF, TXT, or DOCX file and choose to use AI-assisted parsing, the app:
+          </p>
+          <ul class="list-disc ml-6 mt-2 text-gray-700">
+            <li>First extracts any email addresses and phone numbers and <strong>removes/masks them locally</strong>.</li>
+            <li>Then, the app may send the remaining content (education, job titles, descriptions, skills, dates, and any other text present) to a third‑party AI/ML service to convert it into structured resume fields — <strong>only if you agreed</strong> to this in the consent dialog.</li>
+            <li>Any other sensitive identifiers (for example: national ID, passport number, bank details, full home address) that exist in your file <strong>may also be sent</strong> if they were not explicitly recognized and removed by the app. For safety, please remove or mask such sensitive items before uploading.</li>
+          </ul>
+
+          <h2 class="text-lg font-bold mt-4">3. Why we remove email & phone</h2>
+          <p class="text-gray-700 mt-2 leading-relaxed">
+            Email addresses and phone numbers are removed so your direct contact details are never exposed to third-party services. This keeps your contact information private and local to your device.
+          </p>
+
+          <h2 class="text-lg font-bold mt-4">4. AI accuracy & storage</h2>
+          <p class="text-gray-700 mt-2 leading-relaxed">
+            The AI may return incomplete or incorrect information. You must review and confirm parsed details before saving. We try to use third-party services that follow privacy and security practices, and we request that they do not persist your data — but absolute control over third‑party retention is outside our direct control.
+          </p>
+
+          <h2 class="text-lg font-bold mt-4">5. Your control & consent</h2>
+          <p class="text-gray-700 mt-2 leading-relaxed">
+            You are always asked for consent before any data is sent off-device. If you do not consent, no data is transmitted and everything stays local. You are responsible for removing any additional sensitive items from documents you upload.
+          </p>
+
+          <h2 class="text-lg font-bold mt-4">6. Security</h2>
+          <p class="text-gray-700 mt-2 leading-relaxed">
+            Keeping data local reduces exposure risk. We follow common security practices for any communication with third-party services, but remember: the safest option is not to upload documents containing extremely sensitive personal identifiers.
+          </p>
+        </div>
+
+        <div id="content-terms" class="tab-content hidden">
+          <h1 class="text-2xl font-extrabold mb-2">Terms & Conditions</h1>
+          <p class="text-sm text-gray-500 mb-6">Effective Date: October 26, 2025</p>
+
+          <h2 class="text-lg font-bold mt-4">1. Acceptance</h2>
+          <p class="text-gray-700 mt-2 leading-relaxed">
+            By using Tej Resume App you accept these terms. If you do not agree, please do not use the app.
+          </p>
+
+          <h2 class="text-lg font-bold mt-4">2. Service description</h2>
+          <p class="text-gray-700 mt-2 leading-relaxed">
+            The app helps you create, edit, and manage resumes. You may upload files for AI-assisted parsing only if you explicitly agree. Email and phone numbers are never transmitted to third parties.
+          </p>
+
+          <h2 class="text-lg font-bold mt-4">3. User responsibility</h2>
+          <p class="text-gray-700 mt-2 leading-relaxed">
+            You are responsible for the content you upload or enter. Remove any extremely sensitive personal identifiers (national IDs, passport numbers, bank details) before uploading if you do not want them processed.
+          </p>
+
+          <h2 class="text-lg font-bold mt-4">4. Limitation of liability</h2>
+          <p class="text-gray-700 mt-2 leading-relaxed">
+            The app is provided "as is." We are not liable for inaccuracies returned by AI, nor for consequences arising from your use of the parsed data.
+          </p>
+          
+          <h2 class="text-lg font-bold mt-4">5. Intellectual Property</h2>
+          <p class="text-gray-700 mt-2 leading-relaxed">
+            The Tej Resume App, its original content, features, functionality, source code, design, and logo are and will remain the exclusive property of the app creator and are protected by copyright and other laws. However, any resume content, work history, skills, or personal data that you enter or upload into the application <strong>remains your property (the user's property)</strong>. We claim no ownership over the raw data you provide, but we are granted a limited license to use that data solely for the purpose of generating your resume within the app.
+          </p>
+
+          <h2 class="text-lg font-bold mt-4">6. Changes</h2>
+          <p class="text-gray-700 mt-2 leading-relaxed">
+            We may update these Terms & Policy. We will publish the effective date; please review periodically.
+          </p>
+        </div>
+
+        <div id="content-contact" class="tab-content hidden">
+          <h1 class="text-2xl font-extrabold mb-2">Contact Us</h1>
+          <p class="text-gray-700 mt-2 leading-relaxed mb-4">If you have questions about this policy, privacy, or data handling, contact us at:</p>
+          <p class="font-medium text-blue-600"><a href="mailto:feedback@tejresumeapp.com">feedback@tejresumeapp.com</a></p>
+
+          <div class="mt-6">
+            <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" class="space-y-4">
+              <input name="name" required placeholder="Your name" class="w-full p-3 border rounded" />
+              <input name="_replyto" type="email" required placeholder="Your email" class="w-full p-3 border rounded" />
+              <textarea name="message" rows="5" required placeholder="Message" class="w-full p-3 border rounded"></textarea>
+              <button class="px-6 py-3 bg-blue-600 text-white rounded font-semibold">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <script>
-        function showTab(name) {
-            document.querySelectorAll('.tab-content').forEach(e => e.classList.add('hidden'));
-            document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
-            document.getElementById('content-' + name).classList.remove('hidden');
-            document.getElementById('tab-' + name).classList.add('active');
-            history.replaceState(null, '', '#' + name);
-        }
+  <script>
+    function showTab(name) {
+      document.querySelectorAll('.tab-content').forEach(e => e.classList.add('hidden'));
+      document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+      document.getElementById('content-' + name).classList.remove('hidden');
+      document.getElementById('tab-' + name).classList.add('active');
+      history.replaceState(null, '', '#' + name);
+    }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const hash = (location.hash || '#privacy').replace('#','');
-            if (['privacy','terms','contact'].includes(hash)) showTab(hash);
-            else showTab('privacy');
-        });
-    </script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hash = (location.hash || '#privacy').replace('#','');
+      if (['privacy','terms','contact'].includes(hash)) showTab(hash);
+      else showTab('privacy');
+    });
+  </script>
 </body>
 </html>
